@@ -1,5 +1,6 @@
 #include <GL/glut.h>
 #include <D:/SkullBreaker/Skull Breaker/Grilla.h>
+#include <cmath>
 
 Grilla::Grilla(int tamaño, float espacio) :
 	tamañoGrilla(tamaño), espacioGrilla(espacio){}
@@ -34,5 +35,37 @@ void Grilla::dibujar() const
 
 void Grilla::añadirvertice(float x, float y)
 {
+    vertices.emplace_back(x,y);
+}
 
+void Grilla::clickdelmouse(int button, int stado, int x, int y)
+{
+    if (button == GLUT_LEFT_BUTTON && stado == GLUT_DOWN)
+    {
+        float universalX = PantallauniversalX(x);
+        float universalY = PantallauniversalY(y);
+        //buscamos la esquina mas cercana de los cuadrados
+
+        int grillaX = round(universalX / espacioGrilla);
+        int grillaY = round(universalY / espacioGrilla);
+        float verticeX = grillaX * espacioGrilla;
+        float verticeY = grillaY * espacioGrilla;
+
+        añadirvertice(verticeX, verticeY);
+        glutPostRedisplay(); //redibuja la ventana
+    }
+}
+
+float Grilla::PantallauniversalX(int x) const
+{
+    int viewport[4];
+    glGetIntegerv(GL_VIEWPORT, viewport);
+    return (2.0f * x/viewport[2]) - 1.0f;
+}
+
+float Grilla::PantallauniversalY(int y) const
+{
+    int viewport[4];
+    glGetIntegerv(GL_VIEWPORT, viewport);
+    return 1.0f - (2.0f * y / viewport[3]);
 }

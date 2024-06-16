@@ -4,8 +4,7 @@
 class Vertice
 {
 public:
-	Vertice(float x, float y):
-		x(x), y(y){}
+	Vertice(float x, float y);
 	void dibujar() const;
 
 private:
