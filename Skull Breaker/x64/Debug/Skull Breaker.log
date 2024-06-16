@@ -1,0 +1,3 @@
+﻿MSVCRTD.lib(exe_main.obj) : error LNK2019: símbolo externo main sin resolver al que se hace referencia en la función "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\lib\x64\glut32.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+D:\SkullBreaker\Skull Breaker\x64\Debug\Skull Breaker.exe : fatal error LNK1120: 1 externos sin resolver
