@@ -128,11 +128,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Controles.cpp" />
     <ClCompile Include="Grilla.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="vertice.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Controles.h" />
     <ClInclude Include="Grilla.h" />
     <ClInclude Include="vertice.h" />
   </ItemGroup>

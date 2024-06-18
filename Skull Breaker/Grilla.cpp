@@ -56,16 +56,27 @@ void Grilla::clickdelmouse(int button, int stado, int x, int y)
     }
 }
 
+int Grilla::gettamañoGrilla() const
+{
+    return tamañoGrilla;
+}
+
+float Grilla::getespacioGrilla() const
+{
+    return espacioGrilla;
+}
+
 float Grilla::PantallauniversalX(int x) const
 {
     int viewport[4];
     glGetIntegerv(GL_VIEWPORT, viewport);
-    return (2.0f * x/viewport[2]) - 1.0f;
+    float principal_x = ((float)x / (float)viewport[2]) * 2.0 - 1.0;
+    return principal_x * (viewport[2] / (float)viewport[3]);
 }
 
 float Grilla::PantallauniversalY(int y) const
 {
     int viewport[4];
     glGetIntegerv(GL_VIEWPORT, viewport);
-    return 1.0f - (2.0f * y / viewport[3]);
+    return 1.0f - ((float)y / (float)viewport[3]) *2.0;
 }

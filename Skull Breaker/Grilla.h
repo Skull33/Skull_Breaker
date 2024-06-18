@@ -10,6 +10,8 @@ class Grilla {
 		void dibujar() const;
 		void añadirvertice(float x, float y);
 		void clickdelmouse(int button, int stado, int x, int y);
+		int gettamañoGrilla() const;
+		float getespacioGrilla() const;
 	private:
 		int tamañoGrilla;
 		float espacioGrilla;
