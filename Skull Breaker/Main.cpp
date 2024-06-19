@@ -15,11 +15,6 @@ void Display()
 
 void redimensionar(int w, int h)
 {
-	if (h == 0)
-	{
-		h = 1;
-	}
-
 	glViewport(0,0, w, h);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
@@ -75,6 +70,7 @@ int main(int argc, char** argv)
 	glutReshapeFunc(redimensionar);
 	glutMouseFunc(Mouse);
 	glutKeyboardFunc(Acciones::manejarbotones);
+	glutKeyboardUpFunc(Acciones::NOmanejarbotones);
 	glutMainLoop();
 
 	return 0;

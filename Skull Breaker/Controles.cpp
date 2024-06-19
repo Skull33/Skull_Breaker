@@ -1,27 +1,30 @@
+#include <GL/glut.h>
 #include <D:/SkullBreaker/Skull Breaker/Controles.h>
-#include <iostream>
+#include <cstdio>
 
 bool Acciones::mododibujo = false;
+bool Acciones::apretarcontrol = false;
 
 void Acciones::manejarbotones(unsigned char tecla, int x, int y)
 {
-	int modificadores = glutGetModifiers();
-	switch (tecla)
+	if (tecla == 'd')
 	{
-		case 'd':
-		case 'D':
-			if (modificadores & GLUT_ACTIVE_CTRL)
-			{
-				mododibujo = !mododibujo;
-				if (mododibujo)
-				{
-					std::cout << "Modo de Dibujo ON" << std::endl;
-				}
-				else
-				{
-					std::cout << "Modo de Dibujo OFF" << std::endl;
-				}
-			}
-			break;
+		mododibujo = !mododibujo;
+		if (mododibujo)
+		{
+			printf("Modo de Dibujo ON \n");
+			fflush(stdout);
+		}
+		else
+		{
+			printf("Modo de Dibujo OFF \n");
+			fflush(stdout);
+		}
 	}
+}
+
+void Acciones::NOmanejarbotones(unsigned char tecla, int x, int y)
+{
+	printf("Tecla liberada: %c (Código ASCII: %d)\n", tecla, tecla);
+	fflush(stdout);
 }

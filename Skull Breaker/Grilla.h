@@ -6,15 +6,16 @@
 
 class Grilla {
 	public:
-		Grilla(int tamaño, float espacio);
+		Grilla(float espacio);
 		void dibujar() const;
 		void añadirvertice(float x, float y);
 		void clickdelmouse(int button, int stado, int x, int y);
 		int gettamañoGrilla() const;
 		float getespacioGrilla() const;
 	private:
-		int tamañoGrilla;
 		float espacioGrilla;
+		float anchoGrilla;
+		float altoGrilla;
 		std::vector<Vertice> vertices;
 		float PantallauniversalX(int x) const;
 		float PantallauniversalY(int y) const;

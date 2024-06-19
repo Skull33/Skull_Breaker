@@ -2,8 +2,8 @@
 #include <D:/SkullBreaker/Skull Breaker/Grilla.h>
 #include <cmath>
 
-Grilla::Grilla(int tamaño, float espacio) :
-	tamañoGrilla(tamaño), espacioGrilla(espacio){}
+Grilla::Grilla(float espacio):
+	espacioGrilla(espacio), anchoGrilla(2.0f), altoGrilla(2.0f){}
 
 void Grilla::dibujar() const
 {
@@ -13,15 +13,16 @@ void Grilla::dibujar() const
     glBegin(GL_LINES);
 
     // Líneas verticales
-    for (int i = -tamañoGrilla; i <= tamañoGrilla; ++i) {
-        glVertex2f(i * espacioGrilla, -tamañoGrilla * espacioGrilla);
-        glVertex2f(i * espacioGrilla, tamañoGrilla * espacioGrilla);
+    for (int i = -anchoGrilla; i <= anchoGrilla; i += espacioGrilla) {
+        glVertex2f(i,-altoGrilla);
+        glVertex2f(i, altoGrilla);
     }
 
     // Líneas horizontales
-    for (int i = -tamañoGrilla; i <= tamañoGrilla; ++i) {
-        glVertex2f(-tamañoGrilla * espacioGrilla, i * espacioGrilla);
-        glVertex2f(tamañoGrilla * espacioGrilla, i * espacioGrilla);
+    for (int i = -altoGrilla; i <= altoGrilla; i += altoGrilla)
+    {
+        glVertex2f(-anchoGrilla, i);
+        glVertex2f(anchoGrilla, i);
     }
 
     glEnd();
@@ -54,16 +55,6 @@ void Grilla::clickdelmouse(int button, int stado, int x, int y)
         añadirvertice(verticeX, verticeY);
         glutPostRedisplay(); //redibuja la ventana
     }
-}
-
-int Grilla::gettamañoGrilla() const
-{
-    return tamañoGrilla;
-}
-
-float Grilla::getespacioGrilla() const
-{
-    return espacioGrilla;
 }
 
 float Grilla::PantallauniversalX(int x) const
