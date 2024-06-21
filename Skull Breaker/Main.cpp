@@ -2,13 +2,16 @@
 #include <D:/SkullBreaker/Skull Breaker/Grilla.h>
 
 //llamamos a la clase Grilla
-Grilla grilla(20.0f, 10);
+Grilla grilla(20);
 
 //todo esto es lo que se mostrara en ventana
 void Display()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	grilla.Dibujar();
+	int w = glutGet(GLUT_WINDOW_WIDTH);
+	int h = glutGet(GLUT_WINDOW_HEIGHT);
+
+	grilla.Dibujar(w,h);
 	glutSwapBuffers();
 }
 
@@ -24,27 +27,18 @@ void redimesionar(int w, int h)
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 
-	float tamañoGrilla = grilla.GettamañoGrilla();
-	int espacioGrilla = grilla.GetespacioGrilla();
 	if (radiodeaspecto >= 1.0)
 	{
-		gluOrtho2D(-espacioGrilla * tamañoGrilla * radiodeaspecto, espacioGrilla * tamañoGrilla * radiodeaspecto, -espacioGrilla * tamañoGrilla, espacioGrilla * tamañoGrilla);
+		gluOrtho2D(-w/2.0, w/2.0, -h/2.0, h/2.0);
 	}
 	else
 	{
-		gluOrtho2D(-espacioGrilla * tamañoGrilla, espacioGrilla * tamañoGrilla, -espacioGrilla * tamañoGrilla * radiodeaspecto, espacioGrilla * tamañoGrilla * radiodeaspecto);
+		gluOrtho2D(-w / 2.0, w / 2.0, -h / 2.0, h / 2.0);
 	}
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 }
-
-//lo que se vera al iniciar el programa
-void inicializar()
-{
-	glClearColor(0.0, 0.0, 0.0, 0.0);
-}
-
 //Funcion principal
 int main(int argc, char** argv)
 {

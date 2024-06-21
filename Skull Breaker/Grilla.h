@@ -5,12 +5,9 @@
 class Grilla
 {
 	public:
-		Grilla(float tamañoGrilla, int espacioGrilla);
-		void Dibujar() const;
-		float GettamañoGrilla() const;
-		int GetespacioGrilla() const;
+		Grilla(float tamañoGrilla);
+		void Dibujar(int w, int h) const;
 	private:
 		float tamañoGrilla;
-		int espacioGrilla;
 };
 #endif // !GRILLA_H
