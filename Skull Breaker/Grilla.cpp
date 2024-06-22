@@ -9,23 +9,27 @@ Grilla::Grilla(float tamaño):
 	fflush(stdout);
 }
 
-void Grilla::Dibujar(int w, int h) const
+void Grilla::Dibujar(int w, int h, float nivelZoom) const
 {
 	glColor3f(0.5f, 0.5f, 0.5f);
 
-	int espacioGrillaX = w / tamañoGrilla /2;
-	int espacioGrillaY = h / tamañoGrilla / 2;
+	float ajustartamañoGrilla = tamañoGrilla / nivelZoom;
+	float mitadancho = (w / 2.0f) * nivelZoom;
+	float mitadalto = (h / 2.0f) * nivelZoom;
+
+	int espacioGrillaX = (w / ajustartamañoGrilla) /2 +1;
+	int espacioGrillaY = (h / ajustartamañoGrilla) /2 +1;
 
 	glBegin(GL_LINES);
-	for (int i = -espacioGrillaX; i <= espacioGrillaX; ++i)
+	for (float x = -mitadancho; x <= mitadancho; x += ajustartamañoGrilla)
 	{
-		glVertex2f(i * tamañoGrilla, -h / 2.0);
-		glVertex2f(i * tamañoGrilla, h / 2.0);
+		glVertex2f(x, -mitadalto);
+		glVertex2f(x, mitadalto);
 	}
-	for (int i = -espacioGrillaY; i <= espacioGrillaY; ++i)
+	for (float y = -mitadalto; y <= mitadalto; y += ajustartamañoGrilla)
 	{
-		glVertex2f(-w / 2.0, i* tamañoGrilla);
-		glVertex2f(w / 2.0, i * tamañoGrilla);
+		glVertex2f(-mitadancho, y);
+		glVertex2f(mitadancho, y);
 	}
 	glEnd();
 }

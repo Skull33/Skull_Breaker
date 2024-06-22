@@ -6,7 +6,7 @@ class Grilla
 {
 	public:
 		Grilla(float tamañoGrilla);
-		void Dibujar(int w, int h) const;
+		void Dibujar(int w, int h, float nivelZoom) const;
 	private:
 		float tamañoGrilla;
 };

@@ -1,8 +1,2 @@
-﻿  Grilla.cpp
-D:\SkullBreaker\Skull Breaker\Grilla.cpp(8,9): warning C4473: "printf": no se pasaron suficientes argumentos para la cadena de formato
-  D:\SkullBreaker\Skull Breaker\Grilla.cpp(8,9):
-  los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
-  D:\SkullBreaker\Skull Breaker\Grilla.cpp(8,9):
-  el argumento variádico 2 que falta es requerido por la cadena de formato '%d'
-  
+﻿  Main.cpp
   Skull Breaker.vcxproj -> D:\SkullBreaker\Skull Breaker\Debug\Skull Breaker.exe
