@@ -14,31 +14,58 @@ void Consola::log(const std::string& mensaje)
 	}
 }
 
-void Consola::dibujar(int winw, int winh) const 
+void Consola::dibujar(int x, int y, int winw, int winh) const 
 {
-	int alturaConsola = winh / 4;
 	//espacio donde estara la consola
-	glColor3f(0.0f,0.0f,0.0f);
+	glColor3f(0.2f,0.2f,0.2f);
 	glBegin(GL_QUADS);
-	glVertex2f(-winw / 2.0f, -winh /2.0f);
-	glVertex2f(winw / 2.0f, -winh / 2.0f);
-	glVertex2f(winw / 2.0f, -winh /2.0f + alturaConsola);
-	glVertex2f(-winw / 2.0f, -winh /2.0f + alturaConsola);
+	glVertex2f(x,y);
+	glVertex2f(x + winw,y);
+	glVertex2f(x + winw, y + winh);
+	glVertex2f(x, y + winh);
 	glEnd();
 
-	//texto que botara la consola
-	glColor3f(1.0f,1.0f,1.0f);
-	int alturadeLinea = 20;
-	int inicioX = -winw / 2 + 10;
-	int inicioY = -winh / 2 + 10;
-	
+	int alturalineas = 20;
+	int textoY = y + winh - alturalineas;
 	for (size_t i = 0; i < mensajes.size(); ++i)
 	{
-		glRasterPos2f(inicioX, inicioY + i * alturadeLinea);
+		glRasterPos2i(x + 5, textoY);
 		const std::string& msg = mensajes[i];
-		for (char c : msg)
+		size_t pos = msg.find("Skull Breaker");
+		if (pos != std::string::npos)
 		{
-			glutBitmapCharacter(GLUT_BITMAP_9_BY_15, c);
+			//el texto antes de skullbreaker
+			glColor3f(1.0f,1.0f,1.0f);
+			for (size_t j = 0; j < pos; ++j)
+			{
+				glutBitmapCharacter(GLUT_BITMAP_9_BY_15, msg[j]);
+			}
+			//convertir SkullBreaker en rojo
+			glColor3f(1.0f,0.0f,0.0f);
+			for (size_t j = pos; j < pos + 13; ++j)
+			{
+				glutBitmapCharacter(GLUT_BITMAP_9_BY_15, msg[j]);
+			}
+			//el texto despues de SkullBreaker
+			glColor3f(1.0f,1.0f,1.0f);
+			for (size_t j = pos +13; j< msg.size(); ++j)
+			{
+				glutBitmapCharacter(GLUT_BITMAP_9_BY_15, msg[j]);
+			}
+		}
+		else
+		{
+			//todo el texto que no contenga la palabra SkullBreaker
+			glColor3f(1.0f, 1.0f, 1.0f);
+			for (char c: msg)
+			{
+				glutBitmapCharacter(GLUT_BITMAP_9_BY_15,c);
+			}
+		}
+		textoY -= alturalineas;
+		if (textoY < y)
+		{
+			break;
 		}
 	}
 }

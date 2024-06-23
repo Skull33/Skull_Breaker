@@ -10,7 +10,7 @@ class Consola
 	public:
 		Consola(int maximodeLineas = 10);
 		void log(const std::string& mensaje);
-		void dibujar(int winw, int winh) const;
+		void dibujar(int x, int y, int winw, int winh) const;
 	private:
 		std::vector<std::string> mensajes;
 		int maximodeLineas;
