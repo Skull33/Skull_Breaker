@@ -75,7 +75,7 @@ int main(int argc, char** argv)
 	glutReshapeFunc(redimesionar);
 	glutKeyboardFunc(Controles);
 	//mansajes de la consola
-	logenConsola("Inciando Skull Breaker...");
+	logenConsola("Iniciando Skull Breaker...");
 	logenConsola("Creando la cuadricula con tamano de celda 20");
 	glutMainLoop();
 
