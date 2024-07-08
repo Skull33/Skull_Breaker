@@ -1,5 +1,3 @@
 ﻿  Consola.cpp
-D:\SkullBreaker\Skull Breaker\Consola.cpp(11,22): warning C4018: '>': no coinciden signed/unsigned
-  Main.cpp
-  Generando código...
+D:\SkullBreaker\Skull Breaker\Consola.cpp(12,22): warning C4018: '>': no coinciden signed/unsigned
   Skull Breaker.vcxproj -> D:\SkullBreaker\Skull Breaker\Debug\Skull Breaker.exe

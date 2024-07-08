@@ -29,13 +29,14 @@ void Display()
 	gluOrtho2D(0,w,0,h);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
+	consola.actualizarMTG(w,h,nivelzoom);
 	consola.dibujar(10,10,w-20,200);
 	glutSwapBuffers();
 }
 
 void redimesionar(int w, int h)
 {
-	//evitamos la divisionentre 0
+	//evitamos la division entre 0
 	if (h == 0)
 	{
 		h = 1;
@@ -76,7 +77,6 @@ int main(int argc, char** argv)
 	glutKeyboardFunc(Controles);
 	//mansajes de la consola
 	logenConsola("Iniciando Skull Breaker...");
-	logenConsola("Creando la cuadricula con tamano de celda 20");
 	glutMainLoop();
 
 	return 0;
