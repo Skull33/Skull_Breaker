@@ -1,12 +1,15 @@
-#include <GL/glut.h>
+#include <GL/glew.h>
+#include <GL/glfw3.h>
 #include <iostream>
 #include <D:/SkullBreaker/Skull Breaker/Grilla.h>
 #include <D:/SkullBreaker/Skull Breaker/Zoom.h>
+#include <D:/SkullBreaker/Skull Breaker/Controles.h>
 #include <D:/SkullBreaker/Skull Breaker/Consola.h>
 
 //llamamos a la clase Grilla
 Grilla grilla(20.0f);
 Zoom zoom;
+Controles controles(&zoom);
 Consola consola(10);
 
 //todo esto es lo que se mostrara en ventana
@@ -44,20 +47,11 @@ void redimesionar(int w, int h)
 	glViewport(0,0,w,h);
 }
 
-void Controles(unsigned char teclas, int x, int y)
+void teclado(unsigned char teclas, int x, int y)
 {
-	switch (teclas)
-	{
-	case '+':
-		zoom.acercarZoom();
-		glutPostRedisplay();
-		break;
-	case '-':
-		zoom.alejarZoom();
-		glutPostRedisplay();
-		break;
-	}
+	controles.tecladoI(teclas,x,y);
 }
+
 
 void logenConsola(const std::string& mensaje)
 {
@@ -74,9 +68,9 @@ int main(int argc, char** argv)
 	glutCreateWindow("Skull Breaker");
 	glutDisplayFunc(Display);
 	glutReshapeFunc(redimesionar);
-	glutKeyboardFunc(Controles);
+	glutKeyboardFunc(teclado);
 	//mansajes de la consola
-	logenConsola("Iniciando Skull Breaker...");
+	logenConsola("Bienvenido a Skull Breaker");
 	glutMainLoop();
 
 	return 0;

@@ -23,12 +23,12 @@ void Consola::actualizarMTG(int w, int h, float nivelzoom)
 void Consola::dibujar(int x, int y, int winw, int winh) const 
 {
 	//espacio donde estara la consola
+	glColor3f(0.0f, 0.0f, 0.0f);
 	glBegin(GL_QUADS);
 	glVertex2f(x,y);
 	glVertex2f(x + winw,y);
 	glVertex2f(x + winw, y + winh);
 	glVertex2f(x, y + winh);
-	glColor3f(0.2f, 0.2f, 0.2f);
 	glEnd();
 	
 	int alturalineas = 20;
@@ -54,6 +54,5 @@ void Consola::dibujar(int x, int y, int winw, int winh) const
 			break;
 		}
 	}
-	
 	
 }
