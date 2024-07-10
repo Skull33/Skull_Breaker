@@ -1,5 +1,4 @@
-#include <GL/glew.h>
-#include <GL/glfw3.h>
+#include <GL/glut.h>
 #include <iostream>
 #include <D:/SkullBreaker/Skull Breaker/Grilla.h>
 #include <D:/SkullBreaker/Skull Breaker/Zoom.h>
@@ -52,6 +51,10 @@ void teclado(unsigned char teclas, int x, int y)
 	controles.tecladoI(teclas,x,y);
 }
 
+void mouse(int boton, int stado, int x, int y)
+{
+	controles.mouseI(boton, stado, x, y);
+}
 
 void logenConsola(const std::string& mensaje)
 {
@@ -69,6 +72,7 @@ int main(int argc, char** argv)
 	glutDisplayFunc(Display);
 	glutReshapeFunc(redimesionar);
 	glutKeyboardFunc(teclado);
+	glutMouseFunc(mouse);
 	//mansajes de la consola
 	logenConsola("Bienvenido a Skull Breaker");
 	glutMainLoop();

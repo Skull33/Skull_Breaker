@@ -1,5 +1,5 @@
 #include <D:/SkullBreaker/Skull Breaker/Controles.h>
-#include <GL/glfw3.h>
+#include <GL/glut.h>
 
 Controles::Controles(Zoom* zoom) : zoom(zoom)
 {}
@@ -15,16 +15,21 @@ void Controles::tecladoI(unsigned char tecla, int x, int y)
 		zoom->alejarZoom();
 		break;
 	}
+	glutPostRedisplay();
 }
 
-void Controles::mouseI(double compensacionY)
+void Controles::mouseI(int boton, int stado, int x, int y)
 {
-	if (compensacionY > 0)
+	if (stado == GLUT_DOWN)
 	{
-		zoom->acercarZoom();
+		if (boton == 3) 
+		{
+			zoom->acercarZoom();
+		}
+		else if (boton == 4)
+		{
+			zoom->alejarZoom();
+		}
 	}
-	else if (compensacionY < 0)
-	{
-		zoom->alejarZoom();
-	}
+	glutPostRedisplay();
 }
