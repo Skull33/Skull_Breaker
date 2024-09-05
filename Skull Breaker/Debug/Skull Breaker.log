@@ -1,4 +1,15 @@
-﻿  Controles.cpp
+﻿  Consola.cpp
+D:\Skull_Breaker\Skull Breaker\Consola.cpp(12,22): warning C4018: '>': no coinciden signed/unsigned
+  Controles.cpp
+  Grilla.cpp
+D:\Skull_Breaker\Skull Breaker\Grilla.cpp(8,9): warning C4473: "printf": no se pasaron suficientes argumentos para la cadena de formato
+  D:\Skull_Breaker\Skull Breaker\Grilla.cpp(8,9):
+  los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
+  D:\Skull_Breaker\Skull Breaker\Grilla.cpp(8,9):
+  el argumento variádico 2 que falta es requerido por la cadena de formato '%d'
+  
   Main.cpp
+  Zoom.cpp
   Generando código...
-  Skull Breaker.vcxproj -> D:\SkullBreaker\Skull Breaker\Debug\Skull Breaker.exe
+  LINK : no se encontró D:\Skull_Breaker\Skull Breaker\Debug\Skull Breaker.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+  Skull Breaker.vcxproj -> D:\Skull_Breaker\Skull Breaker\Debug\Skull Breaker.exe

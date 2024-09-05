@@ -1,9 +1,9 @@
 #include <GL/glut.h>
 #include <iostream>
-#include <D:/SkullBreaker/Skull Breaker/Grilla.h>
-#include <D:/SkullBreaker/Skull Breaker/Zoom.h>
-#include <D:/SkullBreaker/Skull Breaker/Controles.h>
-#include <D:/SkullBreaker/Skull Breaker/Consola.h>
+#include <D:/Skull_Breaker/Skull Breaker/Grilla.h>
+#include <D:/Skull_Breaker/Skull Breaker/Zoom.h>
+#include <D:/Skull_Breaker/Skull Breaker/Controles.h>
+#include <D:/Skull_Breaker/Skull Breaker/Consola.h>
 
 //llamamos a la clase Grilla
 Grilla grilla(20.0f);

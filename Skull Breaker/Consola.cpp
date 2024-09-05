@@ -1,4 +1,4 @@
-#include <D:/SkullBreaker/Skull Breaker/Consola.h>
+#include <D:/Skull_Breaker/Skull Breaker/Consola.h>
 #include <GL/glut.h>
 #include <iostream>
 #include <cctype>

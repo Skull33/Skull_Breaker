@@ -1,2 +1,16 @@
-﻿  Main.cpp
-LINK : fatal error LNK1104: no se puede abrir el archivo 'glut32.lib'
+﻿Consola.obj : error LNK2019: símbolo externo glutBitmapCharacter sin resolver al que se hace referencia en la función "public: void __cdecl Consola::dibujar(int,int,int,int)const " (?dibujar@Consola@@QEBAXHHHH@Z)
+Controles.obj : error LNK2019: símbolo externo glutPostRedisplay sin resolver al que se hace referencia en la función "public: void __cdecl Controles::mouseI(int,int,int,int)" (?mouseI@Controles@@QEAAXHHHH@Z)
+Main.obj : error LNK2001: símbolo externo glutPostRedisplay sin resolver
+Main.obj : error LNK2019: símbolo externo glutInit sin resolver al que se hace referencia en la función main
+Main.obj : error LNK2019: símbolo externo glutInitDisplayMode sin resolver al que se hace referencia en la función main
+Main.obj : error LNK2019: símbolo externo glutInitWindowSize sin resolver al que se hace referencia en la función main
+Main.obj : error LNK2019: símbolo externo glutMainLoop sin resolver al que se hace referencia en la función main
+Main.obj : error LNK2019: símbolo externo glutCreateWindow sin resolver al que se hace referencia en la función main
+Main.obj : error LNK2019: símbolo externo glutSwapBuffers sin resolver al que se hace referencia en la función "void __cdecl Display(void)" (?Display@@YAXXZ)
+Main.obj : error LNK2019: símbolo externo glutDisplayFunc sin resolver al que se hace referencia en la función main
+Main.obj : error LNK2019: símbolo externo glutReshapeFunc sin resolver al que se hace referencia en la función main
+Main.obj : error LNK2019: símbolo externo glutKeyboardFunc sin resolver al que se hace referencia en la función main
+Main.obj : error LNK2019: símbolo externo glutMouseFunc sin resolver al que se hace referencia en la función main
+Main.obj : error LNK2019: símbolo externo glutGet sin resolver al que se hace referencia en la función "void __cdecl Display(void)" (?Display@@YAXXZ)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\lib\x86\glut32.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+D:\Skull_Breaker\Skull Breaker\x64\Debug\Skull Breaker.exe : fatal error LNK1120: 13 externos sin resolver

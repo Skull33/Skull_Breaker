@@ -1,4 +1,4 @@
-#include <D:/SkullBreaker/Skull Breaker/Controles.h>
+#include <D:/Skull_Breaker/Skull Breaker/Controles.h>
 #include <GL/glut.h>
 
 Controles::Controles(Zoom* zoom) : zoom(zoom)
