@@ -22,6 +22,7 @@ void Consola::actualizarMTG(int w, int h, float nivelzoom)
 
 void Consola::dibujar(int x, int y, int winw, int winh) const 
 {
+	if (visible) return;
 	//espacio donde estara la consola
 	glColor3f(0.0f, 0.0f, 0.0f);
 	glBegin(GL_QUADS);
@@ -30,7 +31,7 @@ void Consola::dibujar(int x, int y, int winw, int winh) const
 	glVertex2f(x + winw, y + winh);
 	glVertex2f(x, y + winh);
 	glEnd();
-	
+
 	int alturalineas = 20;
 	int textoY = y + winh - alturalineas;
 	glColor3f(1.0f, 1.0f, 1.0f);
@@ -54,5 +55,21 @@ void Consola::dibujar(int x, int y, int winw, int winh) const
 			break;
 		}
 	}
-	
+	// Dibuja la "X" en la esquina superior derecha
+	int xOffset = x + winw - 20;
+	int yOffset = y + winh - 20;
+
+	//verificar si el cursor esta en la X
+
+	glBegin(GL_LINES);
+	glVertex2f(xOffset, yOffset);
+	glVertex2f(xOffset + 15, yOffset - 15);
+	glVertex2f(xOffset + 15, yOffset);
+	glVertex2f(xOffset, yOffset - 15);
+	glEnd();
+}
+
+void Consola::cerrar()
+{
+	visible = false;
 }

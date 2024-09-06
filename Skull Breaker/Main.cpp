@@ -11,6 +11,11 @@ Zoom zoom;
 Controles controles(&zoom);
 Consola consola(10);
 
+void setup()
+{
+	controles.setconsola(&consola);
+}
+
 //todo esto es lo que se mostrara en ventana
 void Display()
 {
@@ -69,6 +74,7 @@ int main(int argc, char** argv)
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowSize(1080, 720);
 	glutCreateWindow("Skull Breaker");
+	setup();
 	glutDisplayFunc(Display);
 	glutReshapeFunc(redimesionar);
 	glutKeyboardFunc(teclado);
